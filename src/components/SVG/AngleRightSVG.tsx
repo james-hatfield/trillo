@@ -1,11 +1,13 @@
 import React from "react";
+import { string, number } from "prop-types";
 
-const AngleRightSVG = () => (
+const AngleRightSVG = (props: { color: string; size: number }) => (
   <svg
     version="1.1"
     xmlns="http://www.w3.org/2000/svg"
-    width="9"
-    height="28"
+    width={props.size}
+    height={props.size}
+    fill={props.color}
     viewBox="0 0 9 28"
   >
     <title>angle-right</title>
@@ -13,3 +15,13 @@ const AngleRightSVG = () => (
   </svg>
 );
 export default AngleRightSVG;
+
+AngleRightSVG.propTypes = {
+  color: string,
+  size: number,
+};
+
+AngleRightSVG.defaultProps = {
+  color: "#000",
+  size: 20,
+};

@@ -1,11 +1,13 @@
 import React from "react";
+import { string, number } from "prop-types";
 
-const PlaneSVG = () => (
+const PlaneSVG = (props: { color: string; size: number }) => (
   <svg
     version="1.1"
     xmlns="http://www.w3.org/2000/svg"
-    width="22"
-    height="28"
+    width={props.size}
+    height={props.size}
+    fill={props.color}
     viewBox="0 0 22 28"
   >
     <title>plane</title>
@@ -13,3 +15,13 @@ const PlaneSVG = () => (
   </svg>
 );
 export default PlaneSVG;
+
+PlaneSVG.propTypes = {
+  color: string,
+  size: number,
+};
+
+PlaneSVG.defaultProps = {
+  color: "#000",
+  size: 20,
+};
