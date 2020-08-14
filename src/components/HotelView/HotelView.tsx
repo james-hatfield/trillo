@@ -1,6 +1,7 @@
 import React from "react";
 import classes from "./HotelView.module.scss";
 import Icon from "../SvgIcon/Icon";
+import HotelDetail from "./HotelDetail/HotelDetail";
 
 const HotelView = () => (
   <div className={classes.HotelView}>
@@ -33,6 +34,7 @@ const HotelView = () => (
         <div className={classes.RatingCount}>429 votes</div>
       </div>
     </div>
+    <HotelDetail />
   </div>
 );
 export default HotelView;

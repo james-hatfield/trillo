@@ -1,0 +1,71 @@
+@import "../../sass/main";
+
+.UserReviews {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: center;
+
+  .Review {
+    position: relative;
+    background-color: #fff;
+    overflow: hidden;
+
+    @include Card();
+
+    &:not(:last-child) {
+      margin-bottom: 2rem;
+    }
+
+    blockquote {
+      position: relative;
+      z-index: 10;
+      margin-bottom: 2rem;
+    }
+
+    figcaption {
+      display: flex;
+      align-items: center;
+
+      img {
+        height: 4.5rem;
+        width: 4.5rem;
+        border-radius: 50%;
+      }
+
+      .UserBox {
+        margin-left: 1rem;
+
+        p:nth-child(1) {
+          font-size: 1.1rem;
+          font-weight: 600;
+          text-transform: uppercase;
+          margin-bottom: 0.4rem;
+        }
+
+        p:nth-child(2) {
+          font-size: 1rem;
+          color: var(--color-grey-dark-3);
+        }
+      }
+
+      .Rating {
+        margin-left: auto;
+        color: var(--color-primary);
+        font-size: 2.2rem;
+        font-weight: 600;
+      }
+    }
+
+    &::before {
+      content: "\201C";
+      position: absolute;
+      top: -8rem;
+      left: 0;
+      font-size: 20rem;
+      color: var(--color-grey-light-2);
+      font-family: sans-serif;
+      z-index: 1;
+    }
+  }
+}
