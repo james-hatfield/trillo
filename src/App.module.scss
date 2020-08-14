@@ -7,10 +7,12 @@
   box-shadow: var(--shadow-dark);
 
   min-height: 50rem;
+  height: 50vh;
 }
 
 .Content {
   display: flex;
+  height: 100%;
 }
 
 .HotelView {

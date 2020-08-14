@@ -1,6 +1,79 @@
 @import "../../sass/main";
 
 .Sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   background-color: var(--color-grey-dark-1);
   flex: 0 0 18%;
+  height: 100%;
+
+  .Nav {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    font-size: 1.4rem;
+    margin-top: 3.5rem;
+
+    .Item {
+      display: flex;
+      align-items: text;
+      position: relative;
+
+      &:not(:last-child) {
+        margin-bottom: 0.5rem;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 3px;
+        background-color: var(--color-primary);
+        transform: scaleY(0);
+        transition: transform 0.2s, width 0.3s cubic-bezier(1, 0, 0, 1) 0.2s,
+          background-color 0.1s;
+      }
+
+      &:hover::before,
+      &.Active::before {
+        transform: scaleY(1);
+        width: 100%;
+      }
+
+      &:active::before {
+        background-color: var(--color-primary-light);
+      }
+
+      .Link {
+        &:link,
+        &:visited {
+          color: var(--color-grey-light-1);
+          text-decoration: none;
+          text-transform: uppercase;
+          display: flex;
+          align-items: center;
+          padding: 1.5rem 3rem;
+          z-index: 1;
+          width: 100%;
+          svg {
+            fill: currentColor;
+          }
+
+          span {
+            margin-left: 1rem;
+          }
+        }
+      }
+    }
+  }
+
+  .Legal {
+    font-size: 1.2rem;
+    color: var(--color-grey-light-4);
+    text-align: center;
+    padding: 2.5rem;
+  }
 }
