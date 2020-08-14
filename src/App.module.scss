@@ -1,0 +1,19 @@
+@import "./sass/main";
+
+.Container {
+  max-width: 120rem;
+  margin: 8rem auto;
+  background-color: var(--color-grey-light-2);
+  box-shadow: var(--shadow-dark);
+
+  min-height: 50rem;
+}
+
+.Content {
+  display: flex;
+}
+
+.HotelView {
+  background-color: #fff;
+  flex: 1;
+}
