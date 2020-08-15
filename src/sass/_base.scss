@@ -1,3 +1,5 @@
+@import "./mixins";
+
 // CSS variables
 :root {
   --color-primary: #eb2f64;
@@ -28,6 +30,10 @@
 html {
   box-sizing: border-box;
   font-size: 62.5%; // 1rem = 10px
+
+  @include breakpoints(tab-land) {
+    font-size: 50%;
+  }
 }
 
 body {
@@ -44,4 +50,8 @@ body {
   background-size: cover;
   background-repeat: none;
   min-height: 100vh;
+
+  @include breakpoints(tab-land) {
+    height: 800px;
+  }
 }

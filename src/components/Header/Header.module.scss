@@ -9,6 +9,12 @@
   align-items: center;
   font-size: 1.4rem;
 
+  @include breakpoints(sm-phone) {
+    flex-wrap: wrap;
+    align-content: space-around;
+    height: 11rem;
+  }
+
   .Logo {
     height: 3.25rem;
     margin-left: 2rem;
@@ -19,6 +25,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+    @include breakpoints(sm-phone) {
+      order: 1;
+      flex: 0 0 100%;
+      background-color: var(--color-grey-light-2);
+    }
 
     .SearchInput {
       font-family: inherit;

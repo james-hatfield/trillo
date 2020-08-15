@@ -7,10 +7,26 @@
   background-color: var(--color-grey-light-1);
   border-bottom: var(--line);
 
+  @include breakpoints(tab-port) {
+    padding: 3rem;
+  }
+
+  @include breakpoints(phone) {
+    flex-direction: column;
+  }
+
   .Description {
-    @include Card();
+    @include card();
     margin-right: 4.5rem;
     flex: 0 0 60%;
+
+    @include breakpoints(tab-port) {
+      margin-right: 3rem;
+    }
+
+    @include breakpoints(phone) {
+      margin-bottom: 2rem;
+    }
 
     p:not(:last-of-type) {
       margin-bottom: 2rem;
@@ -35,15 +51,17 @@
           width: 1rem;
           margin-right: 0.7rem;
 
-          //Older browsers
-          // background-image: url(../../assets/chevron-thin-right.svg);
-          // background-size: cover;
+          background-image: url(../../../assets/chevron-thin-right.svg);
+          background-size: cover;
 
-          background-color: var(--color-primary);
-          --webkit-mask-image: url(../../../assets/chevron-thin-right.svg);
-          --webkit-mask-size: cover;
-          mask-image: url(../../../assets/chevron-thin-right.svg);
-          mask-size: cover;
+          @supports (-webkit-mask-image: url()) or (mask-image: url()) {
+            background-color: var(--color-primary);
+            -webkit-mask-image: url(../../../assets/chevron-thin-right.svg);
+            -webkit-mask-size: cover;
+            mask-image: url(../../../assets/chevron-thin-right.svg);
+            mask-size: cover;
+            background-image: none;
+          }
         }
       }
     }

@@ -1,7 +1,46 @@
-@mixin Card() {
+@mixin card() {
   background-color: #fff;
   box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.06);
   padding: 3rem;
-  // border: 1px solid #eee;
   border-radius: 3px;
+
+  @include breakpoints(tab-port) {
+    padding: 2rem;
+  }
+}
+
+@mixin breakpoints($size) {
+  // 350px
+  @if $size == xs-sm-phone {
+    @media (max-width: 21.87em) {
+      @content;
+    }
+  }
+  // 500px
+  @else if $size == sm-phone {
+    @media (max-width: 37.5em) {
+      @content;
+    }
+  }
+  //900px
+  @else if $size == phone {
+    @media (max-width: 37.5em) {
+      @content;
+    }
+    //900px
+  } @else if $size == tab-port {
+    @media (max-width: 56.25em) {
+      @content;
+    }
+    //1200px
+  } @else if $size == tab-land {
+    @media (max-width: 75em) {
+      @content;
+    }
+    //1800px
+  } @else if $size == big-desktop {
+    @media (min-width: 112.5em) {
+      @content;
+    }
+  }
 }

@@ -5,10 +5,18 @@
   margin: 8rem auto;
   background-color: var(--color-grey-light-2);
   box-shadow: var(--shadow-dark);
-
   min-height: 50rem;
+
+  @include breakpoints(tab-land) {
+    margin: 0;
+    width: 100%;
+    max-width: 100%;
+  }
 }
 
 .Content {
   display: flex;
+  @include breakpoints(tab-port) {
+    flex-direction: column;
+  }
 }

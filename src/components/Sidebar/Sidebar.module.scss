@@ -14,13 +14,27 @@
     font-size: 1.4rem;
     margin-top: 3.5rem;
 
+    @include breakpoints(tab-port) {
+      flex-direction: row;
+      margin-top: 0;
+    }
+
     .Item {
       display: flex;
       align-items: text;
       position: relative;
 
+      @include breakpoints(tab-port) {
+        flex: 1;
+        margin-bottom: 0;
+      }
+
       &:not(:last-child) {
         margin-bottom: 0.5rem;
+
+        @include breakpoints(tab-port) {
+          margin-bottom: 0;
+        }
       }
 
       &::before {
@@ -57,12 +71,27 @@
           padding: 1.5rem 3rem;
           z-index: 1;
           width: 100%;
+
+          @include breakpoints(tab-port) {
+            padding: 2rem;
+            align-items: center;
+          }
+
+          @include breakpoints(tab-port) {
+            flex-direction: column;
+            padding: 1.5rem 0.5rem;
+          }
+
           svg {
             fill: currentColor;
           }
 
           span {
             margin-left: 1rem;
+
+            @include breakpoints(tab-port) {
+              margin: 0;
+            }
           }
         }
       }
@@ -74,5 +103,9 @@
     color: var(--color-grey-light-4);
     text-align: center;
     padding: 2.5rem;
+
+    @include breakpoints(tab-port) {
+      display: none;
+    }
   }
 }
